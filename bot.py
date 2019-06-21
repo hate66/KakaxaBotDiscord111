@@ -42,12 +42,6 @@ async def ban_error(ctx, error):
         await ctx.send("Прошу понять и простить 😿")  
 
 
-@client.command()
-@commands.has_permissions(administrator=True)
-async def addrole(ctx, member : discord.Member, role=None):
-    await ctx.send("Роли успешно выдона")
-    await member.add_roles(role) 
-
 
 @client.command()
 #mute command
