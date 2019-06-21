@@ -20,7 +20,7 @@ async def on_ready():
 
 @client.command()
 #clear command
-@commands.has_role("🌌Network Admin")
+@commands.has_permissions(administrator=True)
 async def clear(ctx, amount=50):
     await ctx.channel.purge(limit=amount)
 @clear.error
@@ -31,7 +31,7 @@ async def clear_error(ctx, error):
 
 @client.command()
 #ban command
-@commands.has_role("🌌Network Admin")
+@commands.has_permissions(administrator=True)
 async def ban(ctx, member : discord.Member, *, reason=None):
    await ctx.send("Участник успешно забанен")
    await member.ban (reason=reason)
@@ -44,7 +44,7 @@ async def ban_error(ctx, error):
 
 @client.command()
 #mute command
-@commands.has_role("🌌Network Admin")
+@commands.has_permissions(administrator=True)
 async def mute(ctx, member: discord.Member=None):
     if not member:
         await ctx.send("Отметите участника Сэр!")
@@ -61,7 +61,7 @@ async def mute_error(ctx, error):
 
 @client.command()
 #unmute command
-@commands.has_role("🌌Network Admin")
+@commands.has_permissions(administrator=True)
 async def unmute(ctx, member: discord.Member=None):
     if not member:
         await ctx.send("Отметите участника Сэр!")
